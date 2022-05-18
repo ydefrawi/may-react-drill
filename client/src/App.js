@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppBar from './components/NavBar';
 
 function App() {
 
@@ -29,6 +29,7 @@ function App() {
         {!data ? "Loading..." : data}
         </p>
       </header>
+     <AppBar />
     </div>
   );
 }

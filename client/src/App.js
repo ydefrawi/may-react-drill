@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import './App.css';
-import AppBar from './components/NavBar';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -24,12 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+    <NavBar/>
         <p>
         {!data ? "Loading..." : data}
         </p>
-      </header>
-     <AppBar />
     </div>
   );
 }

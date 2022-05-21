@@ -8,7 +8,7 @@ Students.init(
     {
     id: {
         type: DataTypes.INTEGER,
-        allowNull: False,
+        allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },

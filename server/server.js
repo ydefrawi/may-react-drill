@@ -12,7 +12,7 @@ app.get("/api", (req, res)=>{
 
 //launches server
 
-sequelize.sync({ force: false }).then((results) => {
+sequelize.sync({ force: true }).then((results) => {
     app.listen(PORT, function() {
       console.log(`🌎  ==> API server listening at http://localhost:${PORT}/api`)
   })}).catch((err)=>console.log(err))

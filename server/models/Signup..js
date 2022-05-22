@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 const { Model, DataTypes } = Sequelize;
 import { sequelize } from '../config/connection.js';
 
-class Signups extends Model { }
+class Signup extends Model { }
 
-Signups.init(
+Signup.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ Signups.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'Students',
+                model: 'Student',
                 key: 'id',
             },
         },
@@ -24,7 +24,7 @@ Signups.init(
             type:DataTypes.STRING,
             allowNull:false,
             references:{
-                model:'Classes',
+                model:'YogaClass',
                 key:'id',
             },
         },
@@ -32,7 +32,7 @@ Signups.init(
             type:DataTypes.STRING,
             allowNull:false,
             references:{
-                model:'Instructors',
+                model:'Instructor',
                 key:'id',
             },
         },
@@ -41,8 +41,8 @@ Signups.init(
     {
         sequelize,
         timestamps: true,
-        modelName: 'Signups'
+        modelName: 'Signup'
     }
 );
 
-export default Signups;
+export default Signup;

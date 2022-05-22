@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 const { Model, DataTypes } = Sequelize;
 import { sequelize } from '../config/connection.js';
 
-class Classes extends Model { }
+class YogaClass extends Model { }
 
-Classes.init({
+YogaClass.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -31,7 +31,7 @@ Classes.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Instructors'
+            model: 'Instructor'
         }
     }
 
@@ -39,5 +39,5 @@ Classes.init({
     {
         sequelize,
         timestamps: false,
-        modelName: 'Classes'
+        modelName: 'YogaClass'
     })

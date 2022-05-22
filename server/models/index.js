@@ -1,41 +1,43 @@
-import Classes from './Classes';
-import Instructors from './Instructors';
-import Students from './Students';
-import Signups from './Signups'
+import YogaClass from './YogaClass';
+import Instructor from './Instructor';
+import Student from './Student';
+import Signup from './Signup'
 
-//Students/Signups relationship
-Students.hasMany(Signups, {
+//Student/Signups relationship
+Student.hasMany(Signup, {
     foreignKey: 'student_id'
 })
 
-Signups.belongsTo(Students, {
+Signup.belongsTo(Student, {
     foreignKey: 'student_id'
 })
 
-//Students/Signups relationship
-Instructors.hasMany(Signups, {
+//Student/Signups relationship
+Instructor.hasMany(Signup, {
     foreignKey: 'instructor_id'
 })
 
-Signups.belongsTo(Instructors, {
+Signup.belongsTo(Instructor, {
     foreignKey: 'instructor_id'
 })
 
-//Classes/Signups relationship
-Classes.hasMany(Signups, {
+//YogaClass/Signups relationship
+YogaClass.hasMany(Signup, {
     foreignKey: 'class_id'
 })
 
-Signups.belongsTo(Classes, {
+Signup.belongsTo(YogaClass, {
     foreignKey: 'class_id'
 })
 
-//Instructors/Classes relationship
+//Instructors/YogaClasses relationship
 //!May use Signups as junction table instead 
-Instructors.hasMany(Classes, {
+Instructor.hasMany(YogaClass, {
     foreignkey: 'instructor_id'
 })
 
-Classes.belongsTo(Instructors, {
+YogaClass.belongsTo(Instructor, {
     foreignKey: 'instructor_id'
 })
+
+export {YogaClass, Instructor, Student, Signup}

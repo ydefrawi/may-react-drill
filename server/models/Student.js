@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 const { Model, DataTypes } = Sequelize;
 import { sequelize } from '../config/connection.js';
 
-class Instructors extends Model { }
+class Student extends Model { }
 
-Instructors.init(
+Student.init(
     {
     id: {
         type: DataTypes.INTEGER,
@@ -38,8 +38,8 @@ Instructors.init(
 {
     sequelize,
     timestamps:false,
-    modelName:'Instructors'
+    modelName:'Student'
 }
 );
 
-export default Instructors;
+export default Student;
